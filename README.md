@@ -11,6 +11,39 @@ Inspired by: https://github.com/psrana/Github-Project-Readme
 
 ---
 
+## Description
+
+This small project converts color images and videos to grayscale (black-and-white). It's meant to be easy:
+
+- Open the web page, upload a file, and download the converted result.
+- Or run a single command to convert a video on your computer.
+
+No technical knowledge required — just pick a file and press upload.
+
+---
+
+## Methodology
+
+High-level steps the app follows (what happens after you upload):
+
+```mermaid
+flowchart TD
+	A[User uploads image or video] --> B[Server saves the file]
+	B --> C{Is it a video?}
+	C -- Yes --> D[Open video, read frames]
+	C -- No --> E[Open image]
+	D --> F[Convert each frame to grayscale]
+	E --> G[Convert image to grayscale]
+	F --> H[Write grayscale video file]
+	G --> I[Write grayscale image file]
+	H --> J[Return file for download]
+	I --> J
+```
+
+That's it — OpenCV's `cvtColor` does the heavy lifting.
+
+---
+
 ## How to use (super simple)
 
 1. Run the web app and open it in your browser:
