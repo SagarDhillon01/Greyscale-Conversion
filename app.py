@@ -14,6 +14,17 @@ DB_PATH = BASE_DIR / "uploads.db"
 UPLOAD_DIR = BASE_DIR / "uploads"
 UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
 
+MAX_VIDEO_SIZE_BYTES = 60 * 1024 * 1024
+
+
+def get_upload_size(uploaded_file) -> int:
+    size = uploaded_file.content_length
+    if size is None:
+        uploaded_file.stream.seek(0, os.SEEK_END)
+        size = uploaded_file.stream.tell()
+        uploaded_file.stream.seek(0)
+    return size or 0
+
 
 def init_db() -> None:
     with sqlite3.connect(DB_PATH) as conn:
@@ -43,6 +54,12 @@ def index():
         uploaded_file = request.files["media"]
         filename = uploaded_file.filename
         mime_type = uploaded_file.mimetype or ""
+        file_size = get_upload_size(uploaded_file)
+        if mime_type.startswith("video/") and file_size > MAX_VIDEO_SIZE_BYTES:
+            return (
+                "Video file exceeds 60 MB. For premium subscriptions, unlimited uploads and file size are available for Rs 60 for 1 month.",
+                400,
+            )
         file_ext = Path(filename).suffix.lower() or ".jpg"
         saved_name = f"{datetime.now(timezone.utc).strftime('%Y%m%d%H%M%S%f')}{file_ext}"
         save_path = UPLOAD_DIR / saved_name
