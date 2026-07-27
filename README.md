@@ -6,9 +6,6 @@ Easy summary for anyone:
 
 - Use the web page to upload a photo or a video and download the grayscale result.
 - Or run a small command to convert a video on your computer.
-
-Inspired by: https://github.com/psrana/Github-Project-Readme
-
 ---
 
 ## Description
@@ -17,8 +14,6 @@ This small project converts color images and videos to grayscale (black-and-whit
 
 - Open the web page, upload a file, and download the converted result.
 - Or run a single command to convert a video on your computer.
-
-No technical knowledge required — just pick a file and press upload.
 
 ---
 
