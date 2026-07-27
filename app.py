@@ -3,7 +3,8 @@ import sqlite3
 from datetime import datetime, timezone
 from pathlib import Path
 
-from flask import Flask, render_template, request
+import cv2
+from flask import Flask, render_template, request, send_file
 
 app = Flask(__name__)
 app.secret_key = "demo-upload-db"
@@ -36,24 +37,57 @@ init_db()
 @app.route("/", methods=["GET", "POST"])
 def index():
     if request.method == "POST":
-        if "photo" not in request.files or request.files["photo"].filename == "":
+        if "media" not in request.files or request.files["media"].filename == "":
             return "No file selected", 400
 
-        uploaded_file = request.files["photo"]
+        uploaded_file = request.files["media"]
         filename = uploaded_file.filename
-        file_ext = Path(filename).suffix or ".jpg"
+        mime_type = uploaded_file.mimetype or ""
+        file_ext = Path(filename).suffix.lower() or ".jpg"
         saved_name = f"{datetime.now(timezone.utc).strftime('%Y%m%d%H%M%S%f')}{file_ext}"
         save_path = UPLOAD_DIR / saved_name
         uploaded_file.save(save_path)
 
+        output_name = f"{Path(saved_name).stem}_gray{file_ext}"
+        output_path = UPLOAD_DIR / output_name
+
+        if mime_type.startswith("video/"):
+            cap = cv2.VideoCapture(str(save_path))
+            if not cap.isOpened():
+                return "Could not open the uploaded video.", 400
+            fps = cap.get(cv2.CAP_PROP_FPS) or 24
+            width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+            height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+            fourcc = cv2.VideoWriter_fourcc(*"mp4v")
+            out = cv2.VideoWriter(str(output_path), fourcc, fps, (width, height))
+            if not out.isOpened():
+                return "Could not create grayscale video output.", 400
+            while True:
+                ok, frame = cap.read()
+                if not ok:
+                    break
+                gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+                out.write(cv2.cvtColor(gray, cv2.COLOR_GRAY2BGR))
+            cap.release()
+            out.release()
+        else:
+            image = cv2.imread(str(save_path), cv2.IMREAD_COLOR)
+            if image is None:
+                return "Could not open the uploaded image.", 400
+            gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+            success, encoded = cv2.imencode(".jpg", gray)
+            if not success:
+                return "Could not create grayscale image output.", 400
+            output_path.write_bytes(encoded.tobytes())
+
         with sqlite3.connect(DB_PATH) as conn:
             conn.execute(
                 "INSERT INTO uploads (filename, mime_type, uploaded_at, file_path) VALUES (?, ?, ?, ?)",
-                (filename, uploaded_file.mimetype or "application/octet-stream", datetime.now(timezone.utc).isoformat(), str(save_path)),
+                (filename, mime_type or "application/octet-stream", datetime.now(timezone.utc).isoformat(), str(output_path)),
             )
             conn.commit()
 
-        return f"Uploaded successfully. File saved as {saved_name}", 200
+        return send_file(output_path, as_attachment=True, download_name=output_name)
 
     return render_template("index.html")
 
