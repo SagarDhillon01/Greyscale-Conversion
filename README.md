@@ -6,6 +6,7 @@ Easy summary for anyone:
 
 - Use the web page to upload a photo or a video and download the grayscale result.
 - Or run a small command to convert a video on your computer.
+
 ---
 
 ## Description
@@ -15,6 +16,8 @@ This small project converts color images and videos to grayscale (black-and-whit
 - Open the web page, upload a file, and download the converted result.
 - Or run a single command to convert a video on your computer.
 
+No technical knowledge required — just pick a file and press upload.
+
 ---
 
 ## Methodology
@@ -23,16 +26,16 @@ High-level steps the app follows (what happens after you upload):
 
 ```mermaid
 flowchart TD
-	A[User uploads image or video] --> B[Server saves the file]
-	B --> C{Is it a video?}
-	C -- Yes --> D[Open video, read frames]
-	C -- No --> E[Open image]
-	D --> F[Convert each frame to grayscale]
-	E --> G[Convert image to grayscale]
-	F --> H[Write grayscale video file]
-	G --> I[Write grayscale image file]
-	H --> J[Return file for download]
-	I --> J
+  A[User uploads image or video] --> B[Server saves the file]
+  B --> C{Is it a video?}
+  C -- Yes --> D[Open video, read frames]
+  C -- No --> E[Open image]
+  D --> F[Convert each frame to grayscale]
+  E --> G[Convert image to grayscale]
+  F --> H[Write grayscale video file]
+  G --> I[Write grayscale image file]
+  H --> J[Return file for download]
+  I --> J
 ```
 
 That's it — OpenCV's `cvtColor` does the heavy lifting.
@@ -74,7 +77,18 @@ python modified_greyscale_video.py input.mp4 output_gray.mp4
 
 ---
 
+## Using this project
 
+For a simple step-by-step example and README style to follow, see:
+
+https://github.com/psrana/Github-Project-Readme
 
 ---
 
+## Live demo
+
+Try the hosted demo here:
+
+https://greyscale-conversion-5.onrender.com
+
+You can share this URL with others who just want the utility.
