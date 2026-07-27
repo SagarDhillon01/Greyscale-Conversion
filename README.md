@@ -77,14 +77,6 @@ python modified_greyscale_video.py input.mp4 output_gray.mp4
 
 ---
 
-## Using this project
-
-For a simple step-by-step example and README style to follow, see:
-
-https://github.com/psrana/Github-Project-Readme
-
----
-
 ## Live demo
 
 Try the hosted demo here:
