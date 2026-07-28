@@ -96,8 +96,10 @@ You can share this URL with others who just want the utility.
     <th align="center">Output Image</th>
   </tr>
   <tr>
-    <td><img src="https://github.com/user-attachments/assets/07bbe079-ec39-4069-935e-d0f6ff4c3295" width="280"/></td>
-    <td><img src="https://github.com/user-attachments/assets/dfbbaf27-1ef0-4414-b28c-c745273cce54" width="280"/></td>
+    <td><img src="<img width="2677" height="3890" alt="madhu-shesharam-KQZZCVyEWVk-unsplash" src="https://github.com/user-attachments/assets/56201bcb-1923-433f-9a2f-13e9f64f92d0" />
+"/></td>
+    <td><img src="<img width="2677" height="3890" alt="2ab19a986a0349288c6486e003ebbb78_gray" src="https://github.com/user-attachments/assets/9c182d10-7989-4f3d-8833-925d1f1a8c17" />
+"/></td>
   </tr>
 </table>
 
