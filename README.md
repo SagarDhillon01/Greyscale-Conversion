@@ -86,7 +86,7 @@ https://greyscale-video-3.onrender.com
 You can share this URL with others who just want the utility.
 
 ## Screenshot of Interface
-<img width="866" height="614" alt="Screenshot 2026-07-28 at 4 00 20 PM" src="https://github.com/user-attachments/assets/0ced989d-7e33-4398-a35a-d8dd576cc215" />
+<img width="480" height="341" alt="Screenshot 2026-07-28 at 4 00 20 PM" src="https://github.com/user-attachments/assets/0ced989d-7e33-4398-a35a-d8dd576cc215" />
 
 ## Input and Output Image example
 
@@ -96,10 +96,7 @@ You can share this URL with others who just want the utility.
     <th align="center">Output Image</th>
   </tr>
   <tr>
-    <td><img src="<img width="2677" height="3890" alt="madhu-shesharam-KQZZCVyEWVk-unsplash" src="https://github.com/user-attachments/assets/56201bcb-1923-433f-9a2f-13e9f64f92d0" />
-"/></td>
-    <td><img src="<img width="2677" height="3890" alt="2ab19a986a0349288c6486e003ebbb78_gray" src="https://github.com/user-attachments/assets/9c182d10-7989-4f3d-8833-925d1f1a8c17" />
-"/></td>
+    <td><img src="https://github.com/user-attachments/assets/a2e6dbb2-39ba-4ebc-8f7c-92625598d67d" width="180" height="240"/></td>
+    <td><img src="https://github.com/user-attachments/assets/6e136886-1a57-4f1e-9fff-8705ac10efad" width="180" height="240"/></td>
   </tr>
 </table>
-
