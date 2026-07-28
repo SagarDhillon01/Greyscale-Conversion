@@ -86,12 +86,12 @@ https://greyscale-video-3.onrender.com
 You can share this URL with others who just want the utility.
 
 ## Screenshot of Interface
-
 <img width="866" height="614" alt="Screenshot 2026-07-28 at 4 00 20 PM" src="https://github.com/user-attachments/assets/0ced989d-7e33-4398-a35a-d8dd576cc215" />
+
 ## Input and Output Image example
 Input Image
-<img width="512" height="512" alt="Teja Ji Maharaj" src="https://github.com/user-attachments/assets/09c7366c-076d-4a40-936d-bfc3bff049c3" />
 
+<img width="512" height="512" alt="Teja Ji Maharaj" src="https://github.com/user-attachments/assets/09c7366c-076d-4a40-936d-bfc3bff049c3" />
 
 Output Image
 <img width="512" height="512" alt="1c832b1fa31f4b31a58c2847225cc531_gray" src="https://github.com/user-attachments/assets/f911d4e5-628c-4755-914f-e67db37946cd" />
