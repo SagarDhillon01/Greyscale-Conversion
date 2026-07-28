@@ -94,6 +94,7 @@ Input Image
 <img width="512" height="512" alt="Teja Ji Maharaj" src="https://github.com/user-attachments/assets/09c7366c-076d-4a40-936d-bfc3bff049c3" />
 
 Output Image
+
 <img width="512" height="512" alt="1c832b1fa31f4b31a58c2847225cc531_gray" src="https://github.com/user-attachments/assets/f911d4e5-628c-4755-914f-e67db37946cd" />
 
 
