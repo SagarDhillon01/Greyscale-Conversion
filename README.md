@@ -90,8 +90,11 @@ You can share this URL with others who just want the utility.
 <img width="866" height="614" alt="Screenshot 2026-07-28 at 4 00 20 PM" src="https://github.com/user-attachments/assets/0ced989d-7e33-4398-a35a-d8dd576cc215" />
 ## Input and Output Image example
 Input Image
-<img width="1470" height="956" alt="Screenshot 2025-09-04 at 4 36 48 PM" src="https://github.com/user-attachments/assets/969e9cc7-527c-46e1-913e-f9c9024b4de0" />
+<img width="512" height="512" alt="Teja Ji Maharaj" src="https://github.com/user-attachments/assets/09c7366c-076d-4a40-936d-bfc3bff049c3" />
+
+
 Output Image
-<img width="2940" height="1912" alt="7fc9b247dd3742e0852692592a717e13_gray" src="https://github.com/user-attachments/assets/39ffd31b-490d-49b8-93a2-92955d3e52ab" />
+<img width="512" height="512" alt="1c832b1fa31f4b31a58c2847225cc531_gray" src="https://github.com/user-attachments/assets/f911d4e5-628c-4755-914f-e67db37946cd" />
+
 
 
