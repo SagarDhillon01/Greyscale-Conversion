@@ -84,3 +84,7 @@ Try the hosted demo here:
 https://greyscale-video-3.onrender.com
 
 You can share this URL with others who just want the utility.
+
+## Screenshot of Interface
+
+<img width="866" height="614" alt="Screenshot 2026-07-28 at 4 00 20 PM" src="https://github.com/user-attachments/assets/0ced989d-7e33-4398-a35a-d8dd576cc215" />
